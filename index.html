@@ -16,9 +16,11 @@
 
 
 <h4>Demo 1 - Fruit search</h4>
-<p>Try searching a fruit from the following list: </p>
+<p>Try searching a fruit from the following list [apple, banana, pear, lemon]: </p>
 
 <div ng-app="LevenshteinApp" ng-controller="LevenshteinCtrl"> <p>Word: <input type="text" ng-model="word" ng-change="find_match(word)"></input></p> <p ng-if="best_match"><span style="color:red;">Did you mean:</span> <i style="color:blue;"><strong>{{best_match}}</strong>?</i> (edit distance of {{best_val}})</p>
+
+For example, try typing "lemon" in the box below, you'll notice after "le..." that the word *apple* is shown (because it also has the part "le" in it), but after "lem", the suggestion will switch to *lemon*, because the edit distance is smaller.
 
 <hr>
 
